@@ -34,31 +34,33 @@ export function Welcome() {
 
 
     return (
-      <div className ="h-[75vh] w-[75vw]">
-				<div
-					className="grid grid-flow-col gap-0"
-					// Gotta understand this style bit
-					style={{
-						gridTemplateRows: `repeat(${2 ** zoom}, 256px)`,
-						gridTemplateColumns: `repeat(${2 ** zoom}, 256px)`,
-					}}
-				>
-					{tiles.get(zoom)? (
-						<>          
-						{tiles.get(zoom)?.map((tileURL) => (
-							<img 
-								key={tileURL} 
-								src={tileURL} 
-								alt ="Tile" 
-							/>
-						))}
-						</>
-					): (
-						<p>Loading tile...</p>
-					)}
-				</div>
-				<button onClick={() => {setZoom(zoom => Math.min(zoom + 1, 3))}}>+</button>
-				<button onClick={() => setZoom(zoom => Math.max(zoom - 1, 0))}>-</button>
+      <div className ="display flex flex-col items-center justify-center h-screen bg-gray-300">
+				<div className="max-h-[75vh] max-w-[75vh] overflow-auto">
+					<div
+						className="grid grid-flow-col gap-0"
+						style={{
+							gridTemplateRows: `repeat(${2 ** zoom}, 256px)`,
+							gridTemplateColumns: `repeat(${2 ** zoom}, 256px)`,
+						}}
+					>
+						{tiles.get(zoom)? (
+							<>          
+							{tiles.get(zoom)?.map((tileURL) => (
+								<img 
+									key={tileURL} 
+									src={tileURL} 
+									alt ="Tile" 
+								/>
+							))}
+							</>
+						): (
+							<p>Loading tile...</p>
+						)}
+					</div>
+					</div>
+					<button onClick={() => {setZoom(zoom => Math.min(zoom + 1, 3))}}>+</button>
+					<button onClick={() => setZoom(zoom => Math.max(zoom - 1, 0))}>-</button>
+
       </div>
     );
 }
