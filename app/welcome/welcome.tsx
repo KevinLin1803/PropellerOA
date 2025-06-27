@@ -34,8 +34,8 @@ export function Welcome() {
 
 
     return (
-      <div className ="display flex flex-col items-center justify-center h-screen bg-gray-300">
-				<div className="max-h-[75vh] max-w-[75vh] overflow-auto">
+      <div className ="display flex flex-col items-center justify-center h-screen bg-gray-600">
+				<div className="max-h-[85vh] max-w-[75vh] overflow-auto">
 					<div
 						className="grid grid-flow-col gap-0"
 						style={{
@@ -58,47 +58,12 @@ export function Welcome() {
 						)}
 					</div>
 					</div>
-					<button onClick={() => {setZoom(zoom => Math.min(zoom + 1, 3))}}>+</button>
-					<button onClick={() => setZoom(zoom => Math.max(zoom - 1, 0))}>-</button>
+
+					<div className="display flex flex-col absolute right-[20%] bottom-[20%]">
+						<button className = "flex items-center justify-center bg-gray-100 w-[50px] h-[50px] text-[40px] rounded mb-2"onClick={() => {setZoom(zoom => Math.min(zoom + 1, 3))}} >+</button>
+						<button className = "flex items-center justify-center bg-gray-100 w-[50px] h-[50px] text-[40px] rounded" onClick={() => setZoom(zoom => Math.max(zoom - 1, 0))} >-</button>
+					</div>
 
       </div>
     );
 }
-
-
-
-  // My thinking
-  // Default zoom is 0
-  // If you increase zoom, then we refetch the tiles -> add a loading state
-  // If you decrease zoom, then we also refetch the tiles -> adding a loading state
-
-  // Question -> we can fetch all the tiles and stuff -> but where do we store them?
-     // I think we can just store them in a map right? Like a HashMap
-     // If our hashmap doesn't have the urls -> then we fetch the URLs. 
-
-  // Noticed it took a while -> can I get it to run in the background while I load the first page?
-
-  // Imma load in all the tiles first
-  // const getTile = async () => {
-  //   console.log("Fetching tile...");
-	// 	for (let x = 0; x < 2 ** zoom; x++) {
-	// 		for (let y = 0; y < 2 ** zoom; y++) {
-	// 			const res = await fetch(`https://challenge-tiler.services.propelleraero.com/tiles/${zoom}/${x}/${y}?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiaW50ZXJuIiwiaWF0IjoxNzQ3OTY5OTAyfQ._nFA8un2_IMz23difs56tX4ono-oXApWk8y8YSkGkAw`);
-	// 			console.log(res);
-	// 			const blob = await res.blob();
-	// 			console.log(blob);
-	// 			const update = new Map<number, string[]>(tiles);
-	// 			const arr = update.get(zoom) || [];
-	// 			arr.push(URL.createObjectURL(blob));
-	// 			update.set(zoom,arr);
-	// 			setTiles(update);
-	// 		}
-	// 	}
-  // }
-
-	// // The thing is once we've loaded all of them, we don't need zoom to get changed anymore
-	// // So onclick of zoom -> we prompt the zoom/changing image
-  // useEffect(() => {
-  //   getTile();
-  //   }, [zoom]);
-
