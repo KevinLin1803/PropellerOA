@@ -9,9 +9,9 @@ Attempted gradual zooming between tiles but ran out of time. Currently works zoo
 - zooming out at viewport edges
 - zooming in from/out to zoom level 0
 
-**Implemented Features**
+**Files**
 
-Relevant files found in app -> welcome
+Relevant files found in app -> welcome. TileMap.tsx, TileGrid.tsx, usePanning.tsx, useZoom.tsx.
 
 ### Installation
 
