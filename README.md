@@ -18,7 +18,7 @@ Install the dependencies:
 npm install
 ```
 
-Start the development server with HMR:
+Start the development server:
 
 ```bash
 npm run dev
