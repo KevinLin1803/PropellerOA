@@ -1,6 +1,6 @@
 # Propeller Front-end Coding Challenge 🥳!
 
-**Features**
+**Implemented Features**
 - Allow zooming using +/- buttons
 - Allow scrolling when the content doesn't fit in the browser viewport.
 - allow panning of the tiles rather than scrolling
