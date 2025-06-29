@@ -68,6 +68,8 @@ export function Welcome() {
 		});
 
 	}, [zoom, tiles])
+		// I think I want to try implement a scale
+		// And a from point a to point b -> measuring distances kinda thing :)
 
 	useEffect(() => {
 		if (tiles.has(zoom)) return;
@@ -99,7 +101,14 @@ export function Welcome() {
 				className ="display flex flex-col items-center justify-center h-screen bg-gray-600"
 			>
 				<div 
-					className="max-h-[85vh] max-w-[75vh] overflow-auto"
+					// I don't knwo what to do wtih this guy -> smallest guy on zoom out also has some weird behaviour :3
+					// Then add comments -> tests -> improve style/robustness then submit items
+						// Prepare behavioural and followup technical questions :)
+						// If time try to add the mouse scrolling as well :)
+							// mouse zoom -> affects scale in up to 2/scale out by 1/2
+							// And buggy zoom out behaviour :/ -> lock in tonight. It's not over yet. Go to bed at 11 (This is damn important. Stop taking it so chill)
+							// You can play the Mario kart tomorrow night :)
+					className=" overflow-auto"
 					ref={viewRef}
 					>
 					<div
@@ -137,7 +146,7 @@ export function Welcome() {
 }
 
 
-// 		<button className = "flex items-center justify-center bg-gray-100 w-[50px] h-[50px] text-[40px] rounded mb-2 cursor-pointer"onClick={() => {setZoom(zoom => Math.min(zoom + 1, 3))}} >+</button>
+// <button className = "flex items-center justify-center bg-gray-100 w-[50px] h-[50px] text-[40px] rounded mb-2 cursor-pointer"onClick={() => {setZoom(zoom => Math.min(zoom + 1, 3))}} >+</button>
 // <button className = "flex items-center justify-center bg-gray-100 w-[50px] h-[50px] text-[40px] rounded cursor-pointer" onClick={() => setZoom(zoom => Math.max(zoom - 1, 0))} >-</button>
 
 
