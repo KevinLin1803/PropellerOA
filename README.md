@@ -9,6 +9,8 @@ Attempted gradual zooming between tiles but ran out of time. Currently works zoo
 - zooming out at viewport edges
 - zooming in from/out to zoom level 0
 
+**Implemented Features**
+Relevant files found in app -> welcome
 
 ### Installation
 
