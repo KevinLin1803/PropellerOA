@@ -1,5 +1,9 @@
-.grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0px;
+.zoomIn {
+    transition: "transform 3s";
+    transform: scale(2);
+}
+
+.zoomOut {
+    transform: scale(1/2);
+    transition: "transform 3s";
 }
